@@ -1,13 +1,14 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, Linking } from 'react-native'
 import Card from './Card'
 import CardSection from './CardSection'
+import Button from './Button'
 
 const styles = StyleSheet.create({
     thumbnailContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        borderRadius: 5,
+        overflow: "hidden"
     },
     thumbnail: {
         height: 50,
@@ -19,6 +20,10 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    image: {
+        height: 300,
+        flex: 1
     }
 })
 
@@ -37,7 +42,15 @@ export default ({ album }) => {
                     <Text>{album.artist}</Text>
                 </View>
             </CardSection>
-
+            <CardSection>
+                <Image
+                    style={styles.image}
+                    source={{ uri: album.image }}
+                />
+            </CardSection>
+            <CardSection>
+                <Button onPress={() => Linking.openURL(album.url)}>Buy Now</Button>
+            </CardSection>
         </Card>
     )
 }

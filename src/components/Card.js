@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     containerStyle: {
         borderWidth: 1,
-        borderRadius: 2,
+        borderRadius: 10,
         borderColor: '#ddd',
         borderBottomWidth: 0,
         shadowColor: '#000',
@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 2,
         elevation: 1,
-        marginLeft: 5,
-        marginRight: 5,
-        marginTop: 10
+        marginHorizontal: 5,
+        marginTop: 10,
+        overflow: 'hidden'
     }
 })
 

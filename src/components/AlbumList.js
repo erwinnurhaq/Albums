@@ -29,7 +29,7 @@ class AlbumList extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={{ flex: 1, backgroundColor: 'whitesmoke' }}>
                 <ScrollView>
                     {this.renderAlbumList()}
                 </ScrollView>
